@@ -62,6 +62,6 @@ gzip -9nf Changelog FAQ README TODO
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) %{_prefix}/bin/iceme
-#%{_prefix}/lib/iceme
-%dir /usr/lib/iceme/*/*
+%dir /usr/lib/iceme/*
+/usr/lib/iceme/pixmaps/*
 %{_applnkdir}/Settings/IceWM/*
