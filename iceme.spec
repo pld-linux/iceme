@@ -6,18 +6,19 @@
 Summary:	Graphical menu editor for IceWM
 Summary(pl):	Graficzny edytor menu dla IceWM-a
 Name:		iceme
-Version:	1.0.0
-Release:	3
+Version:	1.1.1
+Release:	1
 License:	GPL
 Group:		X11/Window Managers/Tools
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	23af1108032570ffa3d92480a5de39fd
+Source0:	http://dl.sourceforge.net/%{name}/IceMe-%{version}.tar.gz
+# Source0-md5:	caa574f45386fb89589b3b71e1315410
 Source1:	%{name}.desktop
 Patch0:		%{name}-location.patch
 URL:		http://iceme.sourceforge.net/
+BuildRequires:	python-devel >= 2.1
 Requires:	icewm >= 0.94
 Requires:	pygtk >= 0.6.6
-Requires:	python >= 1.5.2
+Requires:	python >= 2.1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,22 +34,22 @@ IceWM-a. Pozwala u¿ytkownikowi na edycjê menu poprzez wygodne GUI. Po
 wystartowaniu jako root pozwala tak¿e na edycjê menu globalnego.
 
 %prep
-%setup -q
-# for further use
-#%patch0 -p1
+%setup -q -n IceMe-%{version}
+%patch0 -p0
 
 %build
-%{__make} \
-	BUILD_ROOT=$RPM_BUILD_ROOT
+python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM
+install -d $RPM_BUILD_ROOT{%{_applnkdir}/Settings/IceWM,%{_bindir}}
 
-%{__make} install \
-	BUILD_ROOT=$RPM_BUILD_ROOT
+python setup.py install \
+        --optimize=2 \
+        --root=$RPM_BUILD_ROOT 
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM
+mv $RPM_BUILD_ROOT{%{_datadir}/iceme/iceme,%{_bindir}}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -57,6 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changelog FAQ README TODO
 %attr(755,root,root) %{_bindir}/iceme
-%dir %{_libdir}/iceme/*
-%{_libdir}/iceme/pixmaps/*
-%{_applnkdir}/Settings/IceWM/*
+%dir %{_datadir}/iceme
+%attr(755,root,root) %{_datadir}/iceme/*.py
+%{_datadir}/iceme/pixmaps
+#%{_applnkdir}/Settings/IceWM/*
