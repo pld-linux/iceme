@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=IceWM menu editor
+Name[pl]=Edytor menu IceWM
+Comment=Graphical menu-editor for Icewm
+Comment[pl]=Graficzny edytor menu dla icewm
+Icon=
+Exec=iceme
+Terminal=0
+Type=Application
+
