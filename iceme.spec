@@ -14,7 +14,7 @@ Group:		X11/Window Managers/Tools
 Source0:	http://download.sourceforge.net/iceme/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-location.patch
-URL:		http://iceme.sourceforge.net
+URL:		http://iceme.sourceforge.net/
 Requires:	python >= 1.5.2, pygtk >= 0.6.6
 Requires:	icewm >= 0.94
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
