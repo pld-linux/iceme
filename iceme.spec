@@ -1,3 +1,11 @@
+#
+# TODO:
+# - desktop-file
+# - icon
+# - libs location
+# - translations
+#
+
 Summary:	graphical menu editor for IceWM
 Name:		iceme
 Version:	1.0.0
@@ -26,7 +34,8 @@ higher.
 %prep -q
 %setup -q
 
-%patch0 -p1
+# for further use
+#%patch0 -p1
 
 %build
 %{__make} BUILD_ROOT=$RPM_BUILD_ROOT
@@ -44,5 +53,6 @@ gzip -9nf Changelog FAQ README TODO
 %files
 %defattr(644,root,root,755)
 %doc *.gz
-%attr(755,root,root) %{_bindir}/iceme
-%{_prefix}/iceme
+%attr(755,root,root) %{_prefix}/bin/iceme
+#%{_prefix}/lib/iceme
+%dir /usr/lib/iceme/*
