@@ -11,8 +11,6 @@ Release:	3
 License:	GPL
 BuildArch:	noarch
 Group:		X11/Window Managers/Tools
-Group(de):	X11/Fenstermanager/Werkzeuge
-Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
 Source0:	http://download.sourceforge.net/iceme/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-location.patch
