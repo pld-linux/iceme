@@ -4,18 +4,20 @@
 # - icon
 # - libs location
 # - translations
-#
+
 
 Summary:	graphical menu editor for IceWM
+Summary(pl):	Graficzny edytor menu dla IceWM'a
 Name:		iceme
 Version:	1.0.0
 Release:	1
 License:	GPL
 BuildArch:	noarch
-Group:		X11/Window Managers
-Group(de):	X11/Fenstermanager
-Group(pl):	X11/Zarz±dcy Okien
+Group:		X11/Window Managers/Tools
+Group(de):	X11/Fenstermanager/Werkzeuge
+Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
 Source0:	http://download.sourceforge.net/iceme/%{name}-%{version}.tar.gz
+Source1:	%{name}.desktop
 Patch0:		%{name}-location.patch
 URL:		http://iceme.sourceforge.net
 Requires:	python >= 1.5.2, pygtk >= 0.6.6
@@ -46,7 +48,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM/
 %{__make} BUILD_ROOT=$RPM_BUILD_ROOT install
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM/
 
 gzip -9nf Changelog FAQ README TODO
 
@@ -56,3 +62,4 @@ gzip -9nf Changelog FAQ README TODO
 %attr(755,root,root) %{_prefix}/bin/iceme
 #%{_prefix}/lib/iceme
 %dir /usr/lib/iceme/*
+%{_applnkdir}/Settings/IceWM/*
