@@ -1,0 +1,11 @@
+--- ./iceme.orig	Thu May 10 11:52:30 2001
++++ ./iceme	Thu May 10 11:52:50 2001
+@@ -1,7 +1,7 @@
+ #!/bin/sh
+ 
+ # customize this, if you installed IceMe to a different directory:
+-LIB_ICEME=/usr/lib/iceme
++LIB_ICEME=/usr/X11R6/lib/iceme
+ 
+ STARTPWD=`pwd`
+ cd $LIB_ICEME && python IceMe.py $*
