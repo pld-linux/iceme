@@ -11,7 +11,7 @@ Release:	3
 License:	GPL
 BuildArch:	noarch
 Group:		X11/Window Managers/Tools
-Source0:	http://download.sourceforge.net/iceme/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	23af1108032570ffa3d92480a5de39fd
 Source1:	%{name}.desktop
 Patch0:		%{name}-location.patch
