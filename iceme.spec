@@ -1,10 +1,7 @@
 #
 # TODO:
-# - desktop-file
 # - icon
 # - libs location
-# - translations
-
 
 Summary:	graphical menu editor for IceWM
 Summary(pl):	Graficzny edytor menu dla IceWM'a
@@ -30,8 +27,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 IceMe is a graphical menu and shortcut editor for the fast and
 light-weight window manager IceWM. It allows the user to edit the
 IceWM menu with either drag and drop or cut and paste. If started as
-root, can edit the global menu, too. This version is for IceWM 0.94 or
-higher.
+root, can edit the global menu, too.
+
+%description -l pl
+IceMe jest graficznym programem do edycji menu oraz skrótów dla IceWM'a.
+Pozwala u¿ytkownikowi na edycjê menu poprzez wygodne GUI. Po
+wystartowaniu jako root pozwala tak¿e na edycjê menu globalnego.
 
 %prep -q
 %setup -q
