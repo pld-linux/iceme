@@ -3,7 +3,7 @@
 # - icon for desktop
 # - icons location
 # - libs location
-Summary:	graphical menu editor for IceWM
+Summary:	Graphical menu editor for IceWM
 Summary(pl):	Graficzny edytor menu dla IceWM-a
 Name:		iceme
 Version:	1.0.0
@@ -19,7 +19,6 @@ URL:		http://iceme.sourceforge.net/
 Requires:	python >= 1.5.2, pygtk >= 0.6.6
 Requires:	icewm >= 0.94
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 IceMe is a graphical menu and shortcut editor for the fast and
