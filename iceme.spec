@@ -32,7 +32,7 @@ IceMe jest graficznym programem do edycji menu oraz skrótów dla
 IceWM-a. Pozwala u¿ytkownikowi na edycjê menu poprzez wygodne GUI. Po
 wystartowaniu jako root pozwala tak¿e na edycjê menu globalnego.
 
-%prep -q
+%prep
 %setup -q
 # for further use
 #%patch0 -p1
