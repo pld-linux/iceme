@@ -9,7 +9,6 @@ Name:		iceme
 Version:	1.0.0
 Release:	3
 License:	GPL
-BuildArch:	noarch
 Group:		X11/Window Managers/Tools
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	23af1108032570ffa3d92480a5de39fd
@@ -18,6 +17,7 @@ Patch0:		%{name}-location.patch
 URL:		http://iceme.sourceforge.net/
 Requires:	python >= 1.5.2, pygtk >= 0.6.6
 Requires:	icewm >= 0.94
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,15 +37,17 @@ wystartowaniu jako root pozwala tak¿e na edycjê menu globalnego.
 #%patch0 -p1
 
 %build
-%{__make} BUILD_ROOT=$RPM_BUILD_ROOT
+%{__make} \
+	BUILD_ROOT=$RPM_BUILD_ROOT
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM/
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM
 
-%{__make} BUILD_ROOT=$RPM_BUILD_ROOT install
+%{__make} install \
+	BUILD_ROOT=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM/
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -54,6 +56,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changelog FAQ README TODO
 %attr(755,root,root) %{_bindir}/iceme
-%dir /usr/lib/iceme/*
-/usr/lib/iceme/pixmaps/*
+%dir %{_libdir}/iceme/*
+%{_libdir}/iceme/pixmaps/*
 %{_applnkdir}/Settings/IceWM/*
