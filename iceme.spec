@@ -42,11 +42,11 @@ wystartowaniu jako root pozwala tak¿e na edycjê menu globalnego.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__install} -d $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM/
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM/
 
 %{__make} BUILD_ROOT=$RPM_BUILD_ROOT install
 
-%{__install} %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM/
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM/
 
 gzip -9nf Changelog FAQ README TODO
 
