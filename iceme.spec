@@ -8,7 +8,7 @@ Summary:	graphical menu editor for IceWM
 Summary(pl):	Graficzny edytor menu dla IceWM'a
 Name:		iceme
 Version:	1.0.0
-Release:	1
+Release:	2
 License:	GPL
 BuildArch:	noarch
 Group:		X11/Window Managers/Tools
@@ -63,5 +63,5 @@ gzip -9nf Changelog FAQ README TODO
 %doc *.gz
 %attr(755,root,root) %{_prefix}/bin/iceme
 #%{_prefix}/lib/iceme
-%dir /usr/lib/iceme/*
+%dir /usr/lib/iceme/*/*
 %{_applnkdir}/Settings/IceWM/*
