@@ -1,20 +1,16 @@
-# RPM spec file for IceMe
-#
-# please send bugfixes or comments to dmoebius@gmx.net
-#
-
+Summary:	graphical menu editor for IceWM
 Name:		iceme
 Version:	1.0.0
 Release:	1
+License:	GPL
 BuildArch:	noarch
-Summary:	graphical menu editor for IceWM
 Group:		X11/Window Managers
-Source:		http://download.sourceforge.net/iceme/iceme-1.0.0.tar.gz
+Source:		http://download.sourceforge.net/iceme/%{name}-%{version}.tar.gz
 URL:		http://iceme.sourceforge.net
-Packager:	Dirk Moebius <dmoebius@gmx.net>
-Copyright:	GPL
 Requires:	python >= 1.5.2, pygtk >= 0.6.6
-BuildRoot:	/tmp/iceme
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_prefix		/usr/X11R6
 
 %description
 IceMe is a graphical menu and shortcut editor for the fast
@@ -37,7 +33,9 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 make BUILD_ROOT=$RPM_BUILD_ROOT install
 
+gzip -9nf Changelog FAQ README TODO
+
 %files
-%doc COPYING Changelog FAQ README TODO
+%doc *.gz
 /usr/X11R6/bin/iceme
 /usr/lib/iceme
