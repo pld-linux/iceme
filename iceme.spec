@@ -19,7 +19,6 @@ Requires:	python >= 1.5.2, pygtk >= 0.6.6
 Requires:	icewm >= 0.94
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 IceMe is a graphical menu and shortcut editor for the fast and
