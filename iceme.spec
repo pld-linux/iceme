@@ -48,14 +48,12 @@ install -d $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM/
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM/
 
-gzip -9nf Changelog FAQ README TODO
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc Changelog FAQ README TODO
 %attr(755,root,root) %{_bindir}/iceme
 %dir /usr/lib/iceme/*
 /usr/lib/iceme/pixmaps/*
