@@ -3,7 +3,6 @@
 # - icon for desktop
 # - icons location
 # - libs location
-
 Summary:	graphical menu editor for IceWM
 Summary(pl):	Graficzny edytor menu dla IceWM'a
 Name:		iceme
@@ -37,26 +36,24 @@ wystartowaniu jako root pozwala tak¿e na edycjê menu globalnego.
 
 %prep -q
 %setup -q
-
 # for further use
 #%patch0 -p1
 
 %build
 %{__make} BUILD_ROOT=$RPM_BUILD_ROOT
 
-%clean
-make BUILD_ROOT=$RPM_BUILD_ROOT clean
-rm -rf $RPM_BUILD_ROOT
-
 %install
 rm -rf $RPM_BUILD_ROOT
+%{__install} -d $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM/
 
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM/
 %{__make} BUILD_ROOT=$RPM_BUILD_ROOT install
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM/
+%{__install} %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Settings/IceWM/
 
 gzip -9nf Changelog FAQ README TODO
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
