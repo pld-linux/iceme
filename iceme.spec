@@ -1,6 +1,7 @@
 #
 # TODO:
-# - icon
+# - icon for desktop
+# - icons location
 # - libs location
 
 Summary:	graphical menu editor for IceWM
