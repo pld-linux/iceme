@@ -28,8 +28,8 @@ IceWM menu with either drag and drop or cut and paste. If started as
 root, can edit the global menu, too.
 
 %description -l pl
-IceMe jest graficznym programem do edycji menu oraz skrótów dla IceWM'a.
-Pozwala u¿ytkownikowi na edycjê menu poprzez wygodne GUI. Po
+IceMe jest graficznym programem do edycji menu oraz skrótów dla
+IceWM'a. Pozwala u¿ytkownikowi na edycjê menu poprzez wygodne GUI. Po
 wystartowaniu jako root pozwala tak¿e na edycjê menu globalnego.
 
 %prep -q
@@ -56,7 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.gz
-%attr(755,root,root) %{_prefix}/bin/iceme
+%attr(755,root,root) %{_bindir}/iceme
 %dir /usr/lib/iceme/*
 /usr/lib/iceme/pixmaps/*
 %{_applnkdir}/Settings/IceWM/*
