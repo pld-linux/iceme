@@ -15,8 +15,9 @@ Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-location.patch
 URL:		http://iceme.sourceforge.net/
-Requires:	python >= 1.5.2, pygtk >= 0.6.6
 Requires:	icewm >= 0.94
+Requires:	pygtk >= 0.6.6
+Requires:	python >= 1.5.2
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
