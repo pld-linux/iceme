@@ -4,7 +4,7 @@
 # - icons location
 # - libs location
 Summary:	Graphical menu editor for IceWM
-Summary(pl):	Graficzny edytor menu dla IceWM-a
+Summary(pl.UTF-8):   Graficzny edytor menu dla IceWM-a
 Name:		iceme
 Version:	1.1.1
 Release:	1
@@ -28,10 +28,10 @@ light-weight window manager IceWM. It allows the user to edit the
 IceWM menu with either drag and drop or cut and paste. If started as
 root, can edit the global menu, too.
 
-%description -l pl
-IceMe jest graficznym programem do edycji menu oraz skrótów dla
-IceWM-a. Pozwala u¿ytkownikowi na edycjê menu poprzez wygodne GUI. Po
-wystartowaniu jako root pozwala tak¿e na edycjê menu globalnego.
+%description -l pl.UTF-8
+IceMe jest graficznym programem do edycji menu oraz skrÃ³tÃ³w dla
+IceWM-a. Pozwala uÅ¼ytkownikowi na edycjÄ™ menu poprzez wygodne GUI. Po
+wystartowaniu jako root pozwala takÅ¼e na edycjÄ™ menu globalnego.
 
 %prep
 %setup -q -n IceMe-%{version}
