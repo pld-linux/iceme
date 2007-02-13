@@ -4,7 +4,7 @@
 # - icons location
 # - libs location
 Summary:	Graphical menu editor for IceWM
-Summary(pl.UTF-8):   Graficzny edytor menu dla IceWM-a
+Summary(pl.UTF-8):	Graficzny edytor menu dla IceWM-a
 Name:		iceme
 Version:	1.1.1
 Release:	1
