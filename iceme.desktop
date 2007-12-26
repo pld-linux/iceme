@@ -1,5 +1,4 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=IceWM menu editor
 Name[pl]=Edytor menu IceWM
 Comment=Graphical menu-editor for Icewm
@@ -8,5 +7,4 @@ Icon=
 Exec=iceme
 Terminal=false
 Type=Application
-
 # vi: encoding=utf-8
