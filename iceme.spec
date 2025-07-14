@@ -35,7 +35,7 @@ wystartowaniu jako root pozwala także na edycję menu globalnego.
 
 %prep
 %setup -q -n IceMe-%{version}
-%patch0 -p0
+%patch -P0 -p0
 
 %build
 python setup.py build
